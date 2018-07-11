@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Deposit(models.Model):
+    name =  models.CharField(max_length=60)
     id_no = models.CharField(max_length=60)
     mobile_number = models.CharField(max_length=20)
     amount = models.CharField(max_length=20)
@@ -30,6 +31,7 @@ class Placebet(models.Model):
     game_id = models.CharField(max_length=60)
     amount = models.CharField(max_length=20)
     prediction = models.CharField(max_length=20)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
