@@ -5,8 +5,10 @@ from django.contrib.auth.models import User
 class Deposit(models.Model):
     name =  models.CharField(max_length=60)
     id_no = models.CharField(max_length=60)
+    email = models.CharField(max_length=60)
     mobile_number = models.CharField(max_length=20)
     amount = models.CharField(max_length=20)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
