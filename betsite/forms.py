@@ -1,12 +1,13 @@
-from django  import forms
+from django.forms  import ModelForm
+from django import forms
 from .models import Deposit, Placebet
 
-class DepositForm(forms.ModelForm):
+class DepositForm(ModelForm):
     class Meta:
-        model = DepositForm
-        exclude ['name, user']
+        model = Deposit
+        exclude = ['user']
 
-class PlacebetForm(forms.ModelForm):
+class PlacebetForm(ModelForm):
     class Meta:
-        model = PlacebetForm
+        model = Placebet
         exclude = ['user']

@@ -1,9 +1,10 @@
 from django.db import models
+from django import forms
 from django.contrib.auth.models import User
 
 # Create your models here.
 class Deposit(models.Model):
-    name =  models.CharField(max_length=60)
+    name =  models.CharField(max_length=30)
     id_no = models.CharField(max_length=60)
     mobile_number = models.CharField(max_length=20)
     amount = models.CharField(max_length=20)
