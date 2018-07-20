@@ -1,5 +1,5 @@
 from django  import forms
-from .models import Deposit, get_placebet
+from .models import Deposit, Placebet
 
 class DepositForm(forms.ModelForm):
     class Meta:

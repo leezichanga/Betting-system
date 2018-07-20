@@ -25,6 +25,8 @@ def deposit(request):
             deposit.user = current_user
             deposit.save()
             return redirect('home')
+    else:
+        form = DepositForm()
 
 @login_required(login_url='/accounts/login/')
 def place_bet(request):
@@ -39,6 +41,8 @@ def place_bet(request):
             placebet.user = current_user
             placebet.save()
             return redirect('home')
+    else:
+        form = PlacebetForm()
 
 def view_balance(request):
     mobile_number = request.POST.get('mobile_number')
@@ -49,4 +53,4 @@ def view_balance(request):
     recipient.save()
     send_balance(name, email, balance)
     data = {'success': 'Your balance amount is'}
-    return JsonResponse(data) 
+    return JsonResponse(data)
